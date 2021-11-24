@@ -1,5 +1,6 @@
 """docstring"""
 from django.test import TestCase
+from lists.models import Item
 
 
 class HomePageTest(TestCase):
@@ -17,3 +18,12 @@ class HomePageTest(TestCase):
         response = self.client.post('/', data={'item_text': 'A new list item'})
         self.assertIn('A new list item', response.content.decode())
         self.assertTemplateUsed(response, 'home.html')
+
+
+class ItemModelTest(TestCase):
+    """docstring"""
+
+    def test_saving_and_retrieving_items(self):
+        """docstring"""
+        first_item = Item()
+        
