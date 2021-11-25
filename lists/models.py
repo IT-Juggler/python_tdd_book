@@ -3,7 +3,6 @@ from django.db import models
 
 class List(models.Model):
     """docstring"""
-    pass
 
 
 class Item(models.Model):
