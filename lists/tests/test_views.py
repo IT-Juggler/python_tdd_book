@@ -40,7 +40,7 @@ class ListViewTest(TestCase):
 
     def test_passes_correct_list_to_template(self):
         """docstring"""
-        other_list = List.objects.create()
+        _other_list = List.objects.create()
         correct_list = List.objects.create()
         response = self.client.get(f'/lists/{correct_list.id}/')
         self.assertEqual(response.context['list'], correct_list)
@@ -63,7 +63,7 @@ class NewListTest(TestCase):
 
     def test_can_save_a_post_request_to_an_existing_list(self):
         """docstring"""
-        other_list = List.objects.create()
+        _other_list = List.objects.create()
         correct_list = List.objects.create()
 
         self.client.post(
@@ -78,7 +78,7 @@ class NewListTest(TestCase):
 
     def test_redirects_to_list_view(self):
         """docstring"""
-        other_list = List.objects.create()
+        _other_list = List.objects.create()
         correct_list = List.objects.create()
 
         response = self.client.post(
