@@ -1,5 +1,6 @@
 """docstring"""
 from django.test import TestCase
+from django.utils.html import escape
 from lists.models import Item, List
 
 
@@ -87,3 +88,17 @@ class NewListTest(TestCase):
         )
 
         self.assertRedirects(response, f'/lists/{correct_list.id}/')
+
+    def test_validation_errors_are_sent_back_to_home_page_templates(self):
+        """docstring"""
+        response = self.client.post('/lists/new', data={'item_text': ''})
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'home.html')
+        expected_error = escape("You can't have an empty list item")
+        self.assertContains(response, expected_error)
+
+    def test_invalid_list_items_are_not_saved(self):
+        """docstring"""
+        self.client.post('/lists/new', data={'item_text': ''})
+        self.assertEqual(List.objects.count(), 0)
+        self.assertEqual(List.objects.count(), 0)
