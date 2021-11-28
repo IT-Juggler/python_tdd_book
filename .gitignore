@@ -4,5 +4,4 @@ virtualenv
 __pycache__
 *.pyc
 .vscode
-TDD_scratchpad
 /static

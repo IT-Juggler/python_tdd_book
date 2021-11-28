@@ -1,0 +1,15 @@
+_______________
+TDD Scratchpad
+_______________
+DONE - Adjust model so that items are associated with different lists
+DONE - Add unique URLs for each list
+DONE - Add a URL for creating a new list via POST
+DONE - Add URLs for adding a new item to an existing list via POST
+DONE - Refactor away some duplication in urls.py
+DONE - Use CSS
+DONE - improve the appearance
+DONE - remove hardcoded URLs from views.py
+DONE - remove hardcoded URLs from forms in list.html and home.html
+DONE - remove duplication of validation logic in views
+DONE - Unused imports in forms and views
+
