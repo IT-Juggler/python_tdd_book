@@ -7,6 +7,11 @@ from lists.models import Item, List
 class ListAndItemModelsTest(TestCase):
     """docstring"""
 
+    def test_get_absolute_url(self):
+        """docstring"""
+        list_ = List.objects.create()
+        self.assertEqual(list_.get_absolute_url(), f'/lists/{list_.id}/')
+
     def test_saving_and_retrieving_items(self):
         """docstring"""
         list_ = List()
