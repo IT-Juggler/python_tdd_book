@@ -1,4 +1,5 @@
 """docstring"""
+# pylint: disable=W0237
 from django import forms
 from lists.models import Item
 
