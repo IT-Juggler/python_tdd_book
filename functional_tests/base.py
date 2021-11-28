@@ -20,6 +20,10 @@ class FunctionalTest(StaticLiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
+    def get_item_input_box(self):
+        """docstring"""
+        return self.browser.find_element_by_id('id_text')
+
     def wait_for_row_in_list_table(self, row_text):
         """Helper method
         Used by test_can_start_a_list_and_retrieve_it_later.
@@ -36,12 +40,12 @@ class FunctionalTest(StaticLiveServerTestCase):
                     raise wait_error
                 time.sleep(0.5)
 
-    def wait_for(self, fn):
+    def wait_for(self, passed_func):
         """Helper method"""
         start_time = time.time()
         while True:
             try:
-                return fn()
+                return passed_func()
             except (AssertionError, WebDriverException) as wait_error:
                 if time.time() - start_time > MAX_WAIT:
                     raise wait_error
