@@ -1,6 +1,5 @@
 """Build views with Django"""
 from django.shortcuts import redirect, render
-from django.core.exceptions import ValidationError
 from lists.forms import ItemForm
 from lists.models import Item, List
 
