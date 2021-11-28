@@ -1,7 +1,7 @@
 """Build views with Django"""
 from django.shortcuts import redirect, render
 from lists.forms import ItemForm
-from lists.models import Item, List
+from lists.models import List
 
 def home_page(request):
     """Render the home page."""
