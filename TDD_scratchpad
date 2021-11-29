@@ -12,4 +12,7 @@ DONE - remove hardcoded URLs from views.py
 DONE - remove hardcoded URLs from forms in list.html and home.html
 DONE - remove duplication of validation logic in views
 DONE - Unused imports in forms and views
-
+DONE - pylint errors:
+    SOLVED by another update - test_forms: Unexpected keyword argument 'for_list' in method call
+    IGNORED - forms: Parameter 'commit' has been renamed to 'for_list' in overridden 'ItemForm.save' method
+    DONE - views: Unused Item imported from lists.models
